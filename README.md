@@ -65,7 +65,7 @@ docker-compose up -d
 > In windows if `docker-compose exec frontend sh` commands doesnt run in terminal or gitbash try using powershell.
 
 > In windows if errors like this `the input device is not a TTY.  If you are using mintty, try prefixing the command with 'winpty'
-` occurs in gitbash try using powershell or use this command `winpty docker-compose exec frontend bash`.
+` occurs in gitbash try using powershell or use this command `winpty docker-compose exec frontend sh`.
 
 
  > then you can use commands  command without having to execute `docker-compose exec frontend ${YOUR_COMMAND}`
