@@ -1,14 +1,16 @@
-# build stage
-FROM node:lts-alpine
+# Build stage
+FROM node:lts-alpine as build
 
 WORKDIR /var/www/html/vue3-docker
 
-ENV PATH /var/www/html/vue3-docker/node_modules/.bin:$PATH
-
-COPY package.json /var/www/html/vue3-docker/package.json
+COPY package*.json ./
 
 RUN npm install
 
+COPY . .
+
+RUN npm run build
+
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
